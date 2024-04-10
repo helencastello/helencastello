@@ -1,0 +1,262 @@
+/* Root definition for theming and reusability */
+:root {
+    --bg-color-light: #fff; /* Background color for light theme */
+    --text-color-light: #333; /* Text color for light theme */
+    --accent-color-light: #fca9b7; /* Accent color for light theme (used for links, buttons, etc.) */
+    --bg-color-dark: #14191f; /* Background color for dark theme */
+    --text-color-dark: #ecf0f1; /* Text color for dark theme */
+    --accent-color-dark: #fca9b7; /* Accent color for dark theme */
+    --transition-speed: 0s; /* Standard duration for transition effects */
+    --icon-hover-color:#0077B5;
+}
+
+/* Light theme properties */
+body.theme-light {
+    --bg-color: var(--bg-color-light);
+    --text-color: var(--text-color-light);
+    --accent-color: var(--accent-color-light);
+}
+
+/* Dark theme properties */
+body.theme-dark {
+    --bg-color: var(--bg-color-dark);
+    --text-color: var(--text-color-dark);
+    --accent-color: var(--accent-color-dark);
+}
+
+/* Base styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Baloo 2', sans-serif;
+    margin: 4rem; /* Outer margin for body to create space around the content */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    border-radius: 2rem; /* Rounded corners for body */
+    transition: background-color var(--transition-speed), color var(--transition-speed); /* Smooth transition for theme change */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem; /* Spacing inside the header */
+    background: var(--bg-color); /* Use theme background color */
+    color: var(--text-color); /* Use theme text color */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+hr {
+  border: none;
+  height: 1rem;
+  /* Set the hr color */
+  color: var(--text-color);;  /* old IE */
+  background-color: var(--text-color);;  /* Modern Browsers */
+}
+
+#logo {
+    font-weight: bold;
+    font-size: 2rem; /* Large font size for logo */
+    margin: 2rem 0;
+}
+
+.nav-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.show-nav {
+    display: flex; /* Show navigation links when toggle is clicked */
+    position: absolute; /* Positioning it absolutely to not affect the layout of other elements */
+    background-color: var(--bg-color); /* Match the theme background color */
+    width: 100%; /* Full width */
+    top: 60px; /* Adjust based on your header's height */
+    left: 0;
+    z-index: 10; /* Ensure it's above other content */
+}
+
+
+/* Styling for navigation links */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin: 0 2rem; /* Horizontal spacing between navigation links */
+    text-decoration: none; /* Remove underline from links */
+    color: var(--accent-color); /* Use accent color for icons */
+    font-size: 1.5rem; /* Set a consistent font size for icons */
+    transition: color var(--transition-speed), transform var(--transition-speed); /* Smooth transition for hover effects */
+}
+
+/* Hover effect for navigation links */
+.nav-links a:hover {
+    color: var(--icon-hover-color); /* Set color on hover */
+    transform: scale(1.2); /* Enlarge icon slightly on hover */
+}
+
+/* Styling for social media links */
+.social-links {
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Stack social links vertically */
+    align-items: center; /* Align icons to the center */
+    margin: 2rem 0; /* Vertical padding around the social links */
+}
+
+/* Align social icons in a row and center them */
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 2rem 0; /* Vertical spacing between icons */
+    color: var(--accent-color); /* Use theme text color */
+    text-decoration: none; /* Remove underline from the links */
+    transition: color var(--transition-speed), transform var(--transition-speed); /* Smooth transition for hover effects */
+}
+
+/* Hover effect for social icons*/
+.social-links a:hover {
+    color: var(--icon-hover-color); /* Set color on hover */
+    transform: scale(1.2); /* Enlarge icon slightly on hover */
+}
+
+/* Consistent hover effect for all font awesome brand icons */
+.fab, .fas {
+    font-size: 1.5rem; /* Medium font size for icons */
+    transition: color var(--transition-speed), transform var(--transition-speed); /* Smooth transition for hover effects */
+    text-decoration: none; /* Remove underline from icons */
+}
+
+/* Toggle button for theme switch */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem; /* Medium font size for toggle icon */
+    color: var(--accent-color); /* Use theme accent color */
+    cursor: pointer; /* Cursor indicates clickable item */
+    transition: color var(--transition-speed); /* Smooth color transition */
+}
+
+/* Hover effect for theme toggle */
+#theme-toggle:hover {
+    color: var(--icon-hover-color); /* Set color on hover */
+    font-size: 1.5rem; /* Medium font size for icons */
+    transition: color var(--transition-speed), transform var(--transition-speed); /* Smooth transition for hover effects */
+    text-decoration: none; /* Remove underline from icons */
+}
+
+/* Email link styling */
+.email a {
+    color: var(--text-color); /* Use theme text color */
+    text-decoration: none; /* Remove underline */
+    transition: color var(--transition-speed); /* Smooth transition for color and text-decoration */
+}
+
+/* Contact information and profile section */
+#intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem; /* Spacing inside the header */
+}
+
+#intro-welcome h1 {
+    text-align: left;
+}
+
+/* Profile picture styling */
+#profile-picture img {
+    width: 30rem; /* Fixed width */
+    height: 30rem; /* Fixed height */
+}
+
+/* Skills section */
+#skills {
+    margin: 4rem; /* Margin around the skills section */
+}
+
+#skills h2 {
+    font-size: 2rem; /* Large font size for section heading */
+    margin-bottom: 1rem; /* Spacing below the section heading */
+}
+
+/* "Reach out to me" button styling */
+#contact-button {
+    background: var(--accent-color); /* Use theme accent color for button background */
+    color: var(--bg-color); /* Use theme background color for button text */
+    border: none;
+    border-radius: 20px; /* Rounded corners for button */
+    padding: 10px 20px; /* Padding inside button */
+    cursor: pointer; /* Cursor indicates clickable item */
+    margin-top: 20px; /* Spacing above the button */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed); /* Smooth transition for hover effects */
+}
+
+/* Hover effect for "Reach out to me" button */
+#contact-button:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Larger shadow for hover effect */
+    background-color: var(--icon-hover-color); /* Set color on hover */;
+}
+
+/* Apply consistent hover effects to all buttons and links */
+button:hover, a:hover {
+    transform: translateY(-3px); /* Move up slightly on hover for a 'lift' effect */
+}
+
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block; /* Show toggle button on small screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide navigation links by default on small screens */
+        flex-direction: column; /* Stack them vertically when displayed */
+        align-items: center; /* Center-align the links */
+        padding: 0;
+    }
+
+    .nav-links a {
+        margin: 1rem 0; /* Adjust spacing for stacked links */
+    }
+
+    /* Adjust social links to be in line and below on small screens */
+    .social-links {
+        flex-direction: row; /* Make social links inline */
+        justify-content: center; /* Center them */
+        margin: 2rem 0 1rem; /* Adjust spacing */
+    }
+
+    /* Adjust header for small screens to keep email, logo, and theme button inline */
+    header {
+        flex-wrap: wrap; /* Allow header items to wrap */
+        justify-content: space-around; /* Space out items evenly */
+    }
+
+    #logo, .email, #theme-toggle {
+        flex: 1 1 auto; /* Allow these elements to be flexible */
+        text-align: center; /* Center-align the text */
+        margin: 1rem 0; /* Add some margin for spacing */
+    }
+
+    #intro {
+        grid-template-columns: 1fr; /* Stack elements vertically on smaller screens */
+        text-align: center; /* Center text */
+    }
+
+    .social-links {
+        order: 3; /* Move social links to the bottom */
+        margin-top: 2rem; /* Spacing from the content above */
+    }
+
+    #intro-welcome, #profile-picture {
+        order: 1; /* Ensure logical order when stacking */
+    }
+}
+
