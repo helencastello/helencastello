@@ -29,9 +29,9 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'Baloo 2', sans-serif;
-    margin: 4rem; /* Outer margin for body to create space around the content */
+    margin: 5rem; /* Outer margin for body to create space around the content */
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    border-radius: 2rem; /* Rounded corners for body */
+    border-radius: 1rem; /* Rounded corners for body */
     transition: background-color var(--transition-speed), color var(--transition-speed); /* Smooth transition for theme change */
 }
 
@@ -66,16 +66,6 @@ hr {
     color: var(--accent-color);
     font-size: 2rem;
     cursor: pointer;
-}
-
-.show-nav {
-    display: flex; /* Show navigation links when toggle is clicked */
-    position: absolute; /* Positioning it absolutely to not affect the layout of other elements */
-    background-color: var(--bg-color); /* Match the theme background color */
-    width: 100%; /* Full width */
-    top: 60px; /* Adjust based on your header's height */
-    left: 0;
-    z-index: 10; /* Ensure it's above other content */
 }
 
 
@@ -190,11 +180,10 @@ hr {
     background: var(--accent-color); /* Use theme accent color for button background */
     color: var(--bg-color); /* Use theme background color for button text */
     border: none;
-    border-radius: 20px; /* Rounded corners for button */
-    padding: 10px 20px; /* Padding inside button */
+    border-radius: 1rem; /* Rounded corners for button */
+    padding: 1rem; /* Padding inside button */
     cursor: pointer; /* Cursor indicates clickable item */
-    margin-top: 20px; /* Spacing above the button */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin-top: 1rem; /* Spacing above the button */
     transition: background-color var(--transition-speed), box-shadow var(--transition-speed); /* Smooth transition for hover effects */
 }
 
@@ -209,54 +198,116 @@ button:hover, a:hover {
     transform: translateY(-3px); /* Move up slightly on hover for a 'lift' effect */
 }
 
+/* Footer styling */
+footer {
+    background-color: var(--bg-color); /* Background color for the footer */
+    color: var(--text-color); /* Text color for the footer */
+    padding: 2rem; /* Padding inside the footer */
+    text-align: center; /* Center-align text */
+}
+
+/* Horizontal rule styling */
+footer hr {
+    border: none;
+    height: 1px;
+    background-color: var(--text-color); /* Color of the horizontal rule */
+    margin: 1rem 0; /* Margin above and below the horizontal rule */
+}
+
+/* Copyright text styling */
+footer p {
+    font-size: 1rem; /* Font size for the copyright text */
+    margin: 0; /* Remove default margin */
+}
+
+/* Year styling */
+footer #year {
+    font-weight: bold; /* Make the year bold */
+}
+
+
 /* Responsive design adjustments for smaller screens */
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: block; /* Show toggle button on small screens */
+@media (max-width: 1230px) {
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: 'Baloo 2', sans-serif;
+        margin: 1rem; /* Outer margin for body to create space around the content */
+        flex-direction: row; /* Keep header elements in a row */
+        justify-content: space-between; /* Space out logo and nav-toggle */
+        align-items: center; /* Center-align items vertically */
     }
 
-    .nav-links {
-        display: none; /* Hide navigation links by default on small screens */
-        flex-direction: column; /* Stack them vertically when displayed */
-        align-items: center; /* Center-align the links */
-        padding: 0;
-    }
-
-    .nav-links a {
-        margin: 1rem 0; /* Adjust spacing for stacked links */
-    }
-
-    /* Adjust social links to be in line and below on small screens */
-    .social-links {
-        flex-direction: row; /* Make social links inline */
-        justify-content: center; /* Center them */
-        margin: 2rem 0 1rem; /* Adjust spacing */
-    }
-
-    /* Adjust header for small screens to keep email, logo, and theme button inline */
     header {
-        flex-wrap: wrap; /* Allow header items to wrap */
-        justify-content: space-around; /* Space out items evenly */
+        flex-direction: row; /* Stack header elements vertically */
     }
 
-    #logo, .email, #theme-toggle {
-        flex: 1 1 auto; /* Allow these elements to be flexible */
-        text-align: center; /* Center-align the text */
-        margin: 1rem 0; /* Add some margin for spacing */
+    #profile-picture img {
+        width: 100%; /* Make profile picture responsive */
+        height: auto;
+        max-width: 300px; /* Set a max-width to prevent the image from becoming too large */
+        order: 2;
     }
 
     #intro {
-        grid-template-columns: 1fr; /* Stack elements vertically on smaller screens */
-        text-align: center; /* Center text */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem;
+        text-align: center;
+        order: 1;
+    }
+
+    #intro h1 {
+        font-size: 1.2rem; /* Adjust the font size to be smaller on mobile */
+        line-height: 1.4; /* Improve line spacing */
+        text-align: center; /* Center-align the text */
+        padding: 0 1rem; /* Add padding to the sides */
     }
 
     .social-links {
-        order: 3; /* Move social links to the bottom */
-        margin-top: 2rem; /* Spacing from the content above */
+        flex-direction: row; /* Align social links horizontally */
+        justify-content: center; /* Center them on the page */
+        flex-wrap: wrap; /* Allow icons to wrap to the next line if space is tight */
+        gap: 1rem; /* Add space between icons */
+        order: 3;
     }
 
-    #intro-welcome, #profile-picture {
-        order: 1; /* Ensure logical order when stacking */
+    .social-links a {
+        font-size: 1.2rem; /* Adjust the size of social icons */
+    }
+
+    #logo {
+        order: 1; /* Ensure logo is on top */
+    }
+
+    #theme-toggle {
+        order: 2; /* Ensure logo is on top */
+    }
+
+    .nav-toggle {
+        order: 3; /* Ensure navigation toggle is below */
+        width: 100%; /* Full width */
+        display: block; /* Make it visible */
+    }
+
+    .nav-links {
+        order: 3; /* Position the nav-links in between */
+        display: none; /* Hide by default, show when toggle is clicked */
+    }
+
+    /* Show the navigation links when the show-nav class is applied */
+    .show-nav {
+        display: flex;
+        flex-direction: column;
+        background-color: -var(--icon-hover-color); /* Background color for the dropdown */
+        top: 100%; /* Position dropdown below the navbar */
+        width: 100%; /* Full width */
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add shadow for dropdown effect */
+        font-size: 2rem; /* Increase font size for better tapability */
+        margin: 0.5rem 0; /* Adjust spacing for readability */
     }
 }
+
 
