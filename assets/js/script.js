@@ -27,4 +27,37 @@ document.addEventListener('DOMContentLoaded', function() {
     navToggle.addEventListener('click', () => {
     	navLinks.classList.toggle('show-nav');
     });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Listen for a click on the window to close modals
+    window.addEventListener('click', function(event) {
+        var modals = document.querySelectorAll('.modal');
+        modals.forEach(function(modal) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
 });
+
+
+// Open the modal with given id
+function openModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+}
+
+// Close the modal with given id
+function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = 'none';
+}

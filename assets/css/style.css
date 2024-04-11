@@ -95,7 +95,6 @@ hr {
     align-items: center;
     flex-direction: column; /* Stack social links vertically */
     align-items: center; /* Align icons to the center */
-    margin: 2rem 0; /* Vertical padding around the social links */
 }
 
 /* Align social icons in a row and center them */
@@ -147,15 +146,22 @@ hr {
     transition: color var(--transition-speed); /* Smooth transition for color and text-decoration */
 }
 
-/* Contact information and profile section */
-#intro {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.section {
     padding: 3rem; /* Spacing inside the header */
 }
 
-#intro-welcome h1 {
+.title-desc {
+    text-align: center;
+}
+
+/* Contact information and profile section */
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#home-welcome h1 {
     text-align: left;
 }
 
@@ -225,6 +231,96 @@ footer #year {
     font-weight: bold; /* Make the year bold */
 }
 
+#projects-gallery {
+    display: flex;
+    overflow-x: auto;
+    padding: 2rem; /* Padding around the gallery */
+}
+
+.project {
+    cursor: pointer; /* Change cursor to pointer to indicate clickable */
+    text-align: center; /* Center project name text */
+    margin: 0 2rem;
+}
+
+.project-image {
+    width: 400px; /* Desired width */
+    height: 300px; /* Desired height */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+}
+
+.project p {
+    margin-top: 2rem; /* Space between image and project name */
+}
+
+/* General timeline styles */
+.timeline-container {
+    display: flex;
+    overflow-x: auto;
+    margin: 2rem;
+}
+
+.timeline-entry {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.timeline-icon {
+    background-size: cover;
+    width: 400px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 2rem;
+}
+
+.timeline-year {
+    font-weight: bold;
+}
+
+.timeline-title {
+    text-align: center;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
 
 /* Responsive design adjustments for smaller screens */
 @media (max-width: 1230px) {
@@ -249,7 +345,7 @@ footer #year {
         order: 2;
     }
 
-    #intro {
+    #home {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -259,7 +355,7 @@ footer #year {
         order: 1;
     }
 
-    #intro h1 {
+    #home h1 {
         font-size: 1.2rem; /* Adjust the font size to be smaller on mobile */
         line-height: 1.4; /* Improve line spacing */
         text-align: center; /* Center-align the text */
@@ -270,7 +366,6 @@ footer #year {
         flex-direction: row; /* Align social links horizontally */
         justify-content: center; /* Center them on the page */
         flex-wrap: wrap; /* Allow icons to wrap to the next line if space is tight */
-        gap: 1rem; /* Add space between icons */
         order: 3;
     }
 
