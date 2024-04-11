@@ -1,0 +1,97 @@
+<section id="resume">
+	<div class="title-desc">
+		<h2>About me</h2>
+		<p>Feel free to take a look! the picture is clickable :)</p>
+	</div>
+
+	<section id="experience-timeline" class="section">
+        <h2>Experience</h2>
+        <div class="timeline-container">
+            <div class="timeline-entry" onclick="openModal('experience-4')">
+                <img class="timeline-icon" src="assets/images/experience-4.jpg" alt="Experience 4">
+                <div class="timeline-year">Aug 2023 - Present</div>
+                <div class="timeline-title">Going Merry - Platform Engineer</div>
+            </div>
+
+            <div class="timeline-entry" onclick="openModal('experience-3')">
+                <img class="timeline-icon" src="assets/images/experience-3.jpg" alt="Experience 3">
+                <div class="timeline-year">Mar 2022 - Jul 2023</div>
+                <div class="timeline-title">Tokopedia - Software Engineer</div>
+            </div>
+
+            <div class="timeline-entry" onclick="openModal('experience-2')">
+                <img class="timeline-icon" src="assets/images/experience-2.jpg" alt="Experience 2">
+                <div class="timeline-year">Mar 2021 - Mar 2022</div>
+                <div class="timeline-title">Tokopedia - Software Engineer Intern</div>
+            </div>
+
+            <div class="timeline-entry" onclick="openModal('experience-1')">
+                <img class="timeline-icon" src="assets/images/experience-1.jpg" alt="Experience 1">
+                <div class="timeline-year">Feb 2020 - Mar 2021</div>
+                <div class="timeline-title">Sokrates - Associate Member</div>
+            </div>
+
+            <!-- Add more entries here -->
+        </div>
+    </section>
+
+    <!-- Experience Modals -->
+    <div id="experience-4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('experience-4')">&times;</span>
+            <h3>Platform Engineer at Going Merry</h3>
+            <p>Indonesia</p>
+            <!-- Add detailed list of responsibilities here -->
+        </div>
+    </div>
+
+    <div id="experience-3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('experience-3')">&times;</span>
+            <h3>Software Engineer at Tokopedia</h3>
+            <p>Jakarta, Indonesia</p>
+            <!-- Add detailed list of responsibilities here -->
+        </div>
+    </div>
+
+    <div id="experience-2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('experience-2')">&times;</span>
+            <h3>Software Engineer Intern at Tokopedia</h3>
+            <p>Jakarta, Indonesia</p>
+            <!-- Add detailed list of responsibilities here -->
+        </div>
+    </div>
+
+    <div id="experience-1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('experience-1')">&times;</span>
+            <h3>Fullstack associate member at Sokrates (BINUS IT Division)</h3>
+            <p>Jakarta, Indonesia</p>
+        </div>
+    </div>
+
+	<!-- Education Section -->
+	<section id="experience-timeline" class="section">
+        <h2>Education</h2>
+        <div class="timeline-container">
+            <div class="timeline-entry" onclick="openModal('education-1')">
+                <img class="timeline-icon" src="assets/images/education-1.png" alt="Education 1">
+                <div class="timeline-year">2018 - 2022</div>
+                <div class="timeline-title">BINUS University - Computer Science<br>(Bachelor Degree)</div>
+            </div>
+
+            <!-- Add more entries here -->
+        </div>
+    </section>
+
+	<!-- Education Modals -->
+    <div id="education-1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('education-1')">&times;</span>
+            <h3>Bachelor Degree of Computer Science</h3>
+            <p>Jakarta, Indonesia</p>
+            <!-- Add detailed list of responsibilities here -->
+        </div>
+    </div>
+</section>
